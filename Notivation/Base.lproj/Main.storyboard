@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Notivation-->
@@ -54,51 +53,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32s-de-spY">
-                                <rect key="frame" x="20" y="76" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyj-gh-HMd">
-                                <rect key="frame" x="20" y="105" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAD-KN-wSY">
-                                <rect key="frame" x="117" y="72" width="463" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-IB-zTq">
-                                <rect key="frame" x="0.0" y="134" width="600" height="216"/>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-fz-Mvo">
-                                <rect key="frame" x="0.0" y="371" width="600" height="216"/>
-                            </pickerView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-y8-ZjX">
+                                <rect key="frame" x="0.0" y="-2" width="600" height="602"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kx7-aC-FPO">
+                                        <rect key="frame" x="0.0" y="193" width="600" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="481403427.05502099">
+                                            <!--2016-04-03 19:10:27 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFs-df-qUq">
+                                        <rect key="frame" x="8" y="417" width="584" height="30"/>
+                                        <state key="normal" title="Interval"/>
+                                        <connections>
+                                            <segue destination="5Ge-7E-kSw" kind="show" id="SqF-To-iMx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMr-ms-UEr">
+                                        <rect key="frame" x="7" y="455" width="585" height="30"/>
+                                        <state key="normal" title="Repeat"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaI-wA-XRB">
+                                        <rect key="frame" x="8" y="493" width="584" height="30"/>
+                                        <state key="normal" title="Name"/>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="5qx-fz-Mvo" secondAttribute="trailing" id="3Vm-kC-jK0"/>
-                            <constraint firstItem="5qx-fz-Mvo" firstAttribute="leading" secondItem="2zB-IB-zTq" secondAttribute="leading" id="CaP-SW-SWw"/>
-                            <constraint firstItem="Vyj-gh-HMd" firstAttribute="leading" secondItem="32s-de-spY" secondAttribute="leading" id="U4y-XW-9lo"/>
-                            <constraint firstItem="KAD-KN-wSY" firstAttribute="leading" secondItem="32s-de-spY" secondAttribute="trailing" constant="8" symbolic="YES" id="UN5-hy-llG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5qx-fz-Mvo" secondAttribute="bottom" constant="13" id="WJZ-5g-flP"/>
-                            <constraint firstItem="KAD-KN-wSY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ghq-hm-bE2"/>
-                            <constraint firstItem="KAD-KN-wSY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="l3C-1F-IqJ"/>
-                            <constraint firstItem="Vyj-gh-HMd" firstAttribute="top" secondItem="32s-de-spY" secondAttribute="bottom" constant="8" symbolic="YES" id="ljY-Zo-ZIC"/>
-                            <constraint firstItem="5qx-fz-Mvo" firstAttribute="trailing" secondItem="2zB-IB-zTq" secondAttribute="trailing" id="mqh-1Q-0pu"/>
-                            <constraint firstItem="2zB-IB-zTq" firstAttribute="top" secondItem="Vyj-gh-HMd" secondAttribute="bottom" constant="8" symbolic="YES" id="oOf-Kb-azV"/>
-                            <constraint firstItem="KAD-KN-wSY" firstAttribute="centerY" secondItem="32s-de-spY" secondAttribute="centerY" id="qkw-IS-0Ig"/>
-                            <constraint firstItem="5qx-fz-Mvo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wte-I9-KwA"/>
-                            <constraint firstItem="32s-de-spY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z7U-5x-RdA"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1419" y="426"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c0q-rp-L4q">
+            <objects>
+                <viewController id="5Ge-7E-kSw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oqQ-Hu-UV1"/>
+                        <viewControllerLayoutGuide type="bottom" id="0HT-Ht-aqz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3wd-hW-Tjc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ox-MK-5fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="426"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bta-Bt-8kR">
